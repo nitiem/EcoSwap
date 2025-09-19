@@ -1,0 +1,39 @@
+{
+  "name": "ecoswap-backend",
+  "version": "1.0.0",
+  "description": "Backend API for EcoSwap recipe analysis and vegan alternatives",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^6.10.0",
+    "helmet": "^7.0.0",
+    "jsdom": "^27.0.0",
+    "jsonld": "^8.3.0",
+    "natural": "^6.6.2",
+    "openai": "^4.67.1",
+    "puppeteer": "^24.21.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "recipe",
+    "vegan",
+    "sustainability",
+    "web-scraping",
+    "api"
+  ],
+  "author": "EcoSwap Team",
+  "license": "MIT"
+}

@@ -1,0 +1,186 @@
+/* RecipeInput.css - Eco-friendly styling for recipe URL input */
+
+.recipe-input-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.recipe-input-card {
+  background: var(--eco-white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.1);
+  border: 2px solid var(--eco-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-input-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--eco-green), var(--eco-accent), var(--eco-light-green));
+}
+
+.input-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.input-header h2 {
+  color: var(--eco-green);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.input-header p {
+  color: var(--eco-gray);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.recipe-form {
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--eco-green);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.recipe-input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.recipe-input:focus {
+  outline: none;
+  border-color: var(--eco-accent);
+  box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.1);
+  background: var(--eco-white);
+}
+
+.recipe-input.valid {
+  border-color: var(--eco-light-green);
+  background: #f0f9f0;
+}
+
+.recipe-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.recipe-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.validation-icon.valid {
+  color: var(--eco-light-green);
+}
+
+.validation-icon.error {
+  color: #ef4444;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  color: #ef4444;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.analyze-button {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, var(--eco-accent) 0%, var(--eco-light-green) 100%);
+  color: var(--eco-white);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(127, 176, 105, 0.3);
+}
+
+.analyze-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(127, 176, 105, 0.4);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .recipe-input-container {
+    padding: 1rem;
+  }
+  
+  .recipe-input-card {
+    padding: 1.5rem;
+  }
+  
+  .input-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .input-header p {
+    font-size: 1rem;
+  }
+}
