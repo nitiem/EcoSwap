@@ -1,13 +1,16 @@
-# 🌱 EcoSwap
+# 🌱 EcoSwap - AI Recipe Analysis Tool
 
-EcoSwap is a sustainable trading platform built with React and Vite, designed to promote eco-friendly practices through item swapping and community engagement.
+EcoSwap is an intelligent recipe analysis application that transforms traditional recipes into sustainable, plant-based alternatives. Using AI-powered analysis, it extracts recipes from any website, suggests vegan alternatives to non-vegan ingredients, and calculates the environmental impact of your food choices.
 
 ## ✨ Features
 
-- 🔄 **Item Swapping**: Facilitate sustainable exchanges between users
-- ♻️ **Waste Reduction**: Give items a second life through community trading
-- 🌍 **Global Community**: Connect eco-conscious individuals worldwide
-- 💚 **Impact Tracking**: Monitor your positive environmental contributions
+- � **Universal Recipe Extraction**: Analyze recipes from any website using multiple extraction methods
+- 🌱 **Smart Vegan Alternatives**: AI-powered suggestions for plant-based ingredient swaps
+- 📊 **Sustainability Scoring**: Calculate environmental impact and sustainability scores (0-100)
+- 💰 **Cost Transparency**: Real-time tracking of AI usage and costs
+- 🌍 **Environmental Impact**: Track CO₂, water, and land use reductions
+- 🍽️ **EcoSwapped Recipes**: Generate complete eco-friendly recipes ready to cook
+- 🤖 **LLM Fallback**: Advanced AI extraction when traditional methods fail
 - 📱 **Responsive Design**: Optimized for all devices
 
 ## 🚀 Getting Started
