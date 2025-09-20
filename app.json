@@ -1,0 +1,41 @@
+{
+  "name": "EcoSwap",
+  "description": "AI-powered recipe analysis and vegan ingredient substitution platform",
+  "website": "https://github.com/nitiem/EcoSwap",
+  "repository": "https://github.com/nitiem/EcoSwap",
+  "logo": "https://via.placeholder.com/150",
+  "success_url": "/",
+  "keywords": ["vegan", "recipes", "sustainability", "ai", "food"],
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for recipe analysis fallback",
+      "required": true
+    },
+    "OPENAI_MAX_REQUESTS_PER_HOUR": {
+      "description": "Maximum OpenAI API requests per hour",
+      "value": "50",
+      "required": false
+    },
+    "OPENAI_MAX_DAILY_COST": {
+      "description": "Maximum daily cost for OpenAI API usage in USD",
+      "value": "2.00",
+      "required": false
+    },
+    "SCRAPING_TIMEOUT": {
+      "description": "Timeout for web scraping in milliseconds",
+      "value": "30000",
+      "required": false
+    },
+    "PUPPETEER_HEADLESS": {
+      "description": "Run Puppeteer in headless mode",
+      "value": "true",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "addons": []
+}

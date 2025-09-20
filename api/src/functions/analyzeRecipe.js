@@ -88,7 +88,7 @@ app.http('analyzeRecipe', {
 
       // Scrape recipe data
       context.log('📄 Scraping recipe...');
-      const recipeData = await getRecipeScraper().scrapeRecipe(url);
+      const recipeData = await getRecipeScraper().extractRecipeData(url);
 
       if (!recipeData || !recipeData.ingredients || recipeData.ingredients.length === 0) {
         return {
