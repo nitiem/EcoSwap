@@ -1,4 +1,7 @@
 {
+  "platform": {
+    "apiRuntime": "node:18"
+  },
   "routes": [
     {
       "route": "/api/*",
@@ -6,8 +9,7 @@
     },
     {
       "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     }
   ],
   "navigationFallback": {
