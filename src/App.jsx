@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import RecipeInput from './components/RecipeInput'
+import ApiTest from './components/ApiTest'
 import apiService from './services/apiService'
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
 
   return (
     <>
+      {/* Debug panel for Azure deployment */}
+      <ApiTest />
+      
       <div className="eco-header">
         <h1>🌱 EcoSwap</h1>
         <p className="tagline">Transform Any Recipe into a Vegan, Sustainable Alternative</p>

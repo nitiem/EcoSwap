@@ -19,16 +19,39 @@ class ApiService {
     };
 
     try {
+      console.log(`🔗 Making API request to: ${url}`);
       const response = await fetch(url, config);
-      const data = await response.json();
-
+      
+      // Check if response is ok before trying to parse JSON
       if (!response.ok) {
-        throw new Error(data.message || data.error || 'API request failed');
+        let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+        
+        // Try to get error details from response
+        try {
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            const errorData = await response.json();
+            errorMessage = errorData.message || errorData.error || errorMessage;
+          } else {
+            // If it's not JSON, get the text content (likely HTML error page)
+            const errorText = await response.text();
+            console.error('❌ Non-JSON error response:', errorText.substring(0, 200) + '...');
+            errorMessage = `Server returned HTML error page (${response.status})`;
+          }
+        } catch (parseError) {
+          console.error('❌ Error parsing error response:', parseError);
+        }
+        
+        throw new Error(errorMessage);
       }
 
+      // Parse successful response as JSON
+      const data = await response.json();
+      console.log('✅ API request successful');
       return data;
+      
     } catch (error) {
-      console.error('API request failed:', error);
+      console.error('❌ API request failed:', error);
       throw error;
     }
   }
