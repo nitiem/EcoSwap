@@ -10,7 +10,7 @@ const ApiTest = () => {
     setTestResult('Testing API...');
     
     try {
-      const apiUrl = '/api/recipes/analyze';
+      const apiUrl = '/api/analyzeRecipe';  // Use function name directly
       console.log('🧪 Testing API endpoint:', apiUrl);
       
       const response = await fetch(apiUrl, {
@@ -50,7 +50,7 @@ const ApiTest = () => {
     setTestResult('Testing health check...');
     
     try {
-      const response = await fetch('/api/health');
+      const response = await fetch('/api/healthCheck');
       const text = await response.text();
       setTestResult(`Health check (${response.status}): ${text}`);
     } catch (error) {

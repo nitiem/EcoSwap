@@ -42,11 +42,23 @@ const validateRecipeUrl = (url) => {
 };
 
 app.http('analyzeRecipe', {
-  methods: ['POST'],
+  methods: ['POST', 'OPTIONS'],
   authLevel: 'anonymous',
-  route: 'recipes/analyze',
   handler: async (request, context) => {
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type'
+        }
+      };
+    }
+    
     try {
+      context.log('🔍 Recipe analysis request received');
       const body = await request.json();
       const { url } = body;
 
