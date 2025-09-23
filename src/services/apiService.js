@@ -1,11 +1,16 @@
 // API service for communicating with the EcoSwap backend
 const API_BASE_URL = import.meta.env.PROD 
   ? '/api'  // Azure Static Web Apps automatically routes /api to functions
-  : import.meta.env.VITE_API_URL || 'http://localhost:3002/api';
+  : import.meta.env.VITE_API_URL || 'http://localhost:7071/api';
 
 class ApiService {
   constructor() {
     this.baseURL = API_BASE_URL;
+    console.log('🔧 API Service initialized:', {
+      isDev: !import.meta.env.PROD,
+      baseURL: this.baseURL,
+      environment: import.meta.env.MODE
+    });
   }
 
   async request(endpoint, options = {}) {

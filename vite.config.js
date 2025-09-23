@@ -14,9 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.NODE_ENV === 'production' 
-          ? 'https://mango-water-0c6c5720f.4.azurestaticapps.net' 
-          : 'http://localhost:7071',
+        target: 'http://localhost:7071',
         changeOrigin: true
       }
     }
