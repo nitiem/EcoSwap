@@ -58,7 +58,7 @@ class ApiService {
 
   // Analyze recipe from URL
   async analyzeRecipe(url) {
-    return this.request('/recipes/analyze', {
+    return this.request('/analyzeRecipe', {
       method: 'POST',
       body: JSON.stringify({ url }),
     });
@@ -67,17 +67,17 @@ class ApiService {
   // Validate recipe URL
   async validateUrl(url) {
     const params = new URLSearchParams({ url });
-    return this.request(`/recipes/validate-url?${params}`);
+    return this.request(`/validateUrl?${params}`);
   }
 
   // Get supported sites
   async getSupportedSites() {
-    return this.request('/recipes/supported-sites');
+    return this.request('/getSupportedSites');
   }
 
   // Health check
   async healthCheck() {
-    return this.request('/health');
+    return this.request('/healthCheck');
   }
 }
 
