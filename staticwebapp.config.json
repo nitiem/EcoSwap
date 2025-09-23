@@ -34,13 +34,18 @@
   ],
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/images/*.{png,jpg,gif,svg}", "/css/*", "/js/*", "/assets/*", "*.js", "*.css", "*.map", "/assets/*.js", "/assets/*.css", "/assets/*.woff", "/assets/*.woff2", "/assets/*.ttf", "/assets/*.svg"]
+    "exclude": ["/images/*.{png,jpg,gif,svg}", "/css/*", "/js/*", "/assets/*", "*.js", "*.css", "*.map", "/assets/*.js", "/assets/*.css", "/assets/*.woff", "/assets/*.woff2", "/assets/*.ttf", "/assets/*.svg", "*.json"]
   },
+
+
+
   "mimeTypes": {
     ".json": "application/json",
     ".js": "application/javascript",
     ".jsx": "application/javascript", 
     ".mjs": "application/javascript",
+    ".tsx": "application/javascript",
+    ".ts": "application/javascript",
     ".css": "text/css",
     ".html": "text/html",
     ".svg": "image/svg+xml",
@@ -53,10 +58,17 @@
     ".ttf": "font/ttf",
     ".map": "application/json"
   },
+
   "globalHeaders": {
     "content-security-policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; connect-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;"
   },
   "networking": {
     "allowedIpRanges": []
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
   }
 }
